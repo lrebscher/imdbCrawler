@@ -2,7 +2,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("static-method")
@@ -57,15 +59,18 @@ public class IMDBQueries {
                      })
                      //sortiere nach Rating
                      .sorted((o1, o2) -> {
-                         if (Float.valueOf(o1.getRatingValue()) > Float.valueOf(o2.getRatingValue())) {
+                         double ratingValue1 = Double.valueOf(o1.getRatingValue());
+                         double ratingValue2 = Double.valueOf(o2.getRatingValue());
+                         if (ratingValue1 < ratingValue2) {
                              return 1;
+                         } else if (ratingValue1 > ratingValue2) {
+                             return -1;
                          } else {
                              return 0;
                          }
                      })
                      //map von Movie auf Tuple<Movie,String>, nimm dafür den ersten Director aus der Liste, da in der Query nur nach einem gefragt wird
                      .map(movie -> {
-
                          final String director = movie.getDirectorList().get(0);
                          return new Tuple<>(movie, director);
                      })
@@ -104,6 +109,8 @@ public class IMDBQueries {
                      .sorted((o1, o2) -> {
                          if (o1.second < o2.second) {
                              return 1;
+                         } else if (o1.second > o2.second) {
+                             return -1;
                          } else {
                              return 0;
                          }
@@ -124,10 +131,22 @@ public class IMDBQueries {
      *         their lowercase description, sorted by the number of appearances of
      *         these words, which is also returned.
      */
-    public List<Tuple<Movie, Integer>> queryPillarsOfStorytelling(
-        List<Movie> movies) {
-        // TODO Basic Query: insert code here
-        return new ArrayList<>();
+    private List<Tuple<Movie, Integer>> queryPillarsOfStorytelling(final Collection<Movie> movies) {
+        return movies.stream()
+                     .filter(movie -> {
+                         final String lowerCaseDescription = movie.getDescription().toLowerCase();
+                         return lowerCaseDescription.contains("kill") && lowerCaseDescription.contains("love");
+                     })
+                     .map(movie -> {
+                         final String lowerCaseDescription = movie.getDescription().toLowerCase();
+
+                         //credits to http://stackoverflow.com/a/8910767
+                         int killCount = lowerCaseDescription.length() - lowerCaseDescription.replace("kill", "").length();
+                         int loveCount = lowerCaseDescription.length() - lowerCaseDescription.replace("love", "").length();
+                         return new Tuple<Movie, Integer>(movie, killCount + loveCount);
+                     })
+                     .limit(10)
+                     .collect(Collectors.toList());
     }
 
     /**
@@ -158,9 +177,30 @@ public class IMDBQueries {
      * @return list of US-American movies with high duration, large budgets and a
      *         bad IMDB rating, sorted by ascending IMDB rating
      */
-    public List<Movie> queryColossalFailure(List<Movie> movies) {
-        // TODO Basic Query: insert code here
-        return new ArrayList<>();
+    private List<Movie> queryColossalFailure(final Collection<Movie> movies) {
+        //duration format: 2h 10min, duration can be empty
+        return movies.stream()
+                     .filter(movie -> !movie.getDuration().isEmpty()
+                         //beyond 2 hours, check first char (hour) if bigger or equal than 2, assume there is no movie with 2 digits hours
+                         && Integer.valueOf(movie.getDuration().charAt(0)) >= 2
+                         //budget over 1 mio.
+                         && Utils.parseNumber(movie.getBudget()) > 1000000
+                         //rating below 5.0
+                         && Float.valueOf(movie.getRatingValue()) < 5.0)
+                     //sort ascending by rating
+                     .sorted((m1, m2) -> {
+                         float rating1 = Float.valueOf(m1.getRatingValue());
+                         float rating2 = Float.valueOf(m2.getRatingValue());
+
+                         if (rating1 < rating2) {
+                             return -1;
+                         } else if (rating1 > rating2) {
+                             return 1;
+                         } else {
+                             return 0;
+                         }
+                     })
+                     .collect(Collectors.toList());
     }
 
     /**
@@ -173,9 +213,39 @@ public class IMDBQueries {
      * @return the top 10 character names and their frequency of occurrence;
      *         sorted in decreasing order of frequency
      */
-    public List<Tuple<String, Integer>> queryUncreativeWriters(List<Movie> movies) {
-        // TODO Impossibly Hard Query: insert code here
-        return new ArrayList<>();
+    private List<Tuple<String, Integer>> queryUncreativeWriters(final List<Movie> movies) {
+        //idea, hashMap with count
+        final Map<String, Integer> charactersCount = new HashMap<>();
+
+        movies.stream()
+              .forEach(movie -> movie.getCharacterList()
+                                     .forEach(character -> {
+                                         //TODO does not work atm
+                                         if (character.isEmpty() || character.equals("Herself") || character.equals("Himself")) {
+                                             //do not add to list
+                                         } else {
+                                             if (charactersCount.containsKey(character)) {
+                                                 charactersCount.put(character, charactersCount.get(character) + 1);
+                                             } else {
+                                                 charactersCount.put(character, 1);
+                                             }
+                                         }
+                                     }));
+
+        return charactersCount.entrySet()
+                              .stream()
+                              .sorted((o1, o2) -> {
+                                  if (o1.getValue() > o2.getValue()) {
+                                      return -1;
+                                  } else if (o1.getValue() < o2.getValue()) {
+                                      return 1;
+                                  } else {
+                                      return 0;
+                                  }
+                              })
+                              .limit(10)
+                              .map(entry -> new Tuple<String, Integer>(entry.getKey(), entry.getValue()))
+                              .collect(Collectors.toList());
     }
 
     /**
