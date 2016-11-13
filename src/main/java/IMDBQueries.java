@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,7 +47,7 @@ public class IMDBQueries {
      *          the list of movies which is to be queried
      * @return top ten movies and the director, sorted by decreasing IMDB rating
      */
-    private List<Tuple<Movie, String>> queryAllRounder(final List<Movie> movies) {
+    private List<Tuple<Movie, String>> queryAllRounder(final Collection<Movie> movies) {
         return movies.stream()
                      //movies raussuchen, für die gilt: director stars as an actor
                      .filter(movie -> {
@@ -69,7 +70,7 @@ public class IMDBQueries {
                          return new Tuple<>(movie, director);
                      })
                      //top 10
-                     .limit(10)
+                     .limit(10L)
                      //Ergebnisse sammeln und als Liste zurückgeben
                      .collect(Collectors.toList());
     }
@@ -85,9 +86,30 @@ public class IMDBQueries {
      * @return top ten highest rated US-American movie until 2015, sorted by
      *         monetary loss, which is also returned
      */
-    public List<Tuple<Movie, Long>> queryUnderTheRadar(List<Movie> movies) {
-        // TODO Basic Query: insert code here
-        return new ArrayList<>();
+    private List<Tuple<Movie, Long>> queryUnderTheRadar(List<Movie> movies) {
+        return movies.stream()
+                     .filter(movie -> Integer.valueOf(movie.getYear()) <= 2015)
+                     .filter(movie -> Float.valueOf(movie.getRatingValue()) > 8.0 && Utils.parseNumber(movie.getRatingCount()) >= 1000)
+                     .map(movie -> {
+                         //format: $313,837,577
+                         final Long budget = Utils.parseNumber(movie.getBudget());
+                         final Long gross = Utils.parseNumber(movie.getGross());
+
+                         //loss := budget - gross
+                         final Long loss = budget - gross;
+
+                         return new Tuple<>(movie, loss);
+                     })
+                     //TODO fix problem with sorting. somehow it does not sort correctly...
+                     .sorted((o1, o2) -> {
+                         if (o1.second < o2.second) {
+                             return 1;
+                         } else {
+                             return 0;
+                         }
+                     })
+                     .limit(10)
+                     .collect(Collectors.toList());
     }
 
     /**
@@ -118,9 +140,12 @@ public class IMDBQueries {
      * @return list of Sci-Fi movies involving Mars in ascending order of
      *         publication.
      */
-    public List<Movie> queryRedPlanet(List<Movie> movies) {
-        // TODO Basic Query: insert code here
-        return new ArrayList<>();
+    private List<Movie> queryRedPlanet(final Collection<Movie> movies) {
+        return movies.stream()
+                     .filter(movie -> movie.getGenreList().contains("\"Sci-Fi\""))
+                     .filter(movie -> movie.getDescription().contains("Mars"))
+                     .sorted((m1, m2) -> Integer.valueOf(m1.getYear()) > Integer.valueOf(m2.getYear()) ? 1 : 0)
+                     .collect(Collectors.toList());
     }
 
     /**
