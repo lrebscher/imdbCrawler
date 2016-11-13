@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("static-method")
 public class IMDBQueries {
@@ -45,9 +46,32 @@ public class IMDBQueries {
      *          the list of movies which is to be queried
      * @return top ten movies and the director, sorted by decreasing IMDB rating
      */
-    public List<Tuple<Movie, String>> queryAllRounder(List<Movie> movies) {
-        // TODO Basic Query: insert code here
-        return new ArrayList();
+    private List<Tuple<Movie, String>> queryAllRounder(final List<Movie> movies) {
+        return movies.stream()
+                     //movies raussuchen, für die gilt: director stars as an actor
+                     .filter(movie -> {
+                         //Schnittoperation auf die beiden Mengen, siehe doku zu retiainAll für mehr Infos
+                         movie.getDirectorList().retainAll(movie.getCastList());
+                         return !movie.getDirectorList().isEmpty();
+                     })
+                     //sortiere nach Rating
+                     .sorted((o1, o2) -> {
+                         if (Float.valueOf(o1.getRatingValue()) > Float.valueOf(o2.getRatingValue())) {
+                             return 1;
+                         } else {
+                             return 0;
+                         }
+                     })
+                     //map von Movie auf Tuple<Movie,String>, nimm dafür den ersten Director aus der Liste, da in der Query nur nach einem gefragt wird
+                     .map(movie -> {
+
+                         final String director = movie.getDirectorList().get(0);
+                         return new Tuple<>(movie, director);
+                     })
+                     //top 10
+                     .limit(10)
+                     //Ergebnisse sammeln und als Liste zurückgeben
+                     .collect(Collectors.toList());
     }
 
     /**

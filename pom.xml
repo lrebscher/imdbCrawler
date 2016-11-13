@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ImdbCrawler</mainClass>
+                            <mainClass>IMDBQueries</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
