@@ -73,12 +73,12 @@ public class MovieReader {
      *          The key of the array
      * @return A list containing the Strings in the JSON object.
      */
-    protected static List<String> getJsonArray(JsonObject m, String key) {
+    private static List<String> getJsonArray(final JsonObject m, final String key) {
         try {
-            JsonArray array = m.getJsonArray(key);
-            List<String> result = new ArrayList<>();
-            for (JsonValue v : array) {
-                result.add(((JsonString) v).toString());
+            final JsonArray array = m.getJsonArray(key);
+            final List<String> result = new ArrayList<>();
+            for (final JsonValue v : array) {
+                result.add(((JsonString) v).getString());
             }
             return result;
         } catch (Exception e) {
@@ -95,7 +95,7 @@ public class MovieReader {
      *          The key of the array
      * @return The String in the JSON object.
      */
-    protected static String getString(JsonObject m, String key) {
+    private static String getString(JsonObject m, String key) {
         try {
             Object o = m.getString(key);
             if (o != null) {

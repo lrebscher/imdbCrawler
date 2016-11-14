@@ -160,7 +160,7 @@ public class IMDBQueries {
      */
     private List<Movie> queryRedPlanet(final Collection<Movie> movies) {
         return movies.stream()
-                     .filter(movie -> movie.getGenreList().contains("\"Sci-Fi\""))
+                     .filter(movie -> movie.getGenreList().contains("Sci-Fi"))
                      .filter(movie -> movie.getDescription().contains("Mars"))
                      .sorted((m1, m2) -> Integer.valueOf(m1.getYear()) > Integer.valueOf(m2.getYear()) ? 1 : 0)
                      .collect(Collectors.toList());
@@ -219,7 +219,7 @@ public class IMDBQueries {
         movies.stream()
               .forEach(movie -> movie.getCharacterList()
                                      .forEach(character -> {
-                                         if (!character.toLowerCase().equals("\"\"")
+                                         if (!character.toLowerCase().isEmpty()
                                              && !character.toLowerCase().contains("herself")
                                              && !character.toLowerCase().contains("himself")
                                              && !character.toLowerCase().contains("doctor")) {
