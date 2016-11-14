@@ -100,12 +100,11 @@ public class IMDBQueries {
                          final Long budget = Utils.parseNumber(movie.getBudget());
                          final Long gross = Utils.parseNumber(movie.getGross());
 
-                         //loss := budget - gross
+                         //loss := budget - gross, will be positive if movie is a flop
                          final Long loss = budget - gross;
 
                          return new Tuple<>(movie, loss);
                      })
-                     //TODO fix problem with sorting. somehow it does not sort correctly...
                      .sorted((o1, o2) -> {
                          if (o1.second < o2.second) {
                              return 1;
@@ -220,10 +219,11 @@ public class IMDBQueries {
         movies.stream()
               .forEach(movie -> movie.getCharacterList()
                                      .forEach(character -> {
-                                         //TODO does not work atm
-                                         if (character.isEmpty() || character.equals("Herself") || character.equals("Himself")) {
-                                             //do not add to list
-                                         } else {
+                                         if (!character.toLowerCase().equals("\"\"")
+                                             && !character.toLowerCase().contains("herself")
+                                             && !character.toLowerCase().contains("himself")
+                                             && !character.toLowerCase().contains("doctor")) {
+
                                              if (charactersCount.containsKey(character)) {
                                                  charactersCount.put(character, charactersCount.get(character) + 1);
                                              } else {
@@ -306,7 +306,6 @@ public class IMDBQueries {
         // TODO Impossibly Hard Query: insert code here
         return new ArrayList<>();
     }
-
 
     public static void main(String argv[]) throws IOException {
         String moviesPath = "./data/movies/";
