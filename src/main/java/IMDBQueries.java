@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("static-method")
@@ -244,7 +245,7 @@ public class IMDBQueries {
                                   }
                               })
                               .limit(10)
-                              .map(entry -> new Tuple<String, Integer>(entry.getKey(), entry.getValue()))
+                              .map(entry -> new Tuple<>(entry.getKey(), entry.getValue()))
                               .collect(Collectors.toList());
     }
 
@@ -257,9 +258,35 @@ public class IMDBQueries {
      * @return the top ten actors and the number of movies they had a role in,
      *         sorted by the latter.
      */
-    public List<Tuple<String, Integer>> queryWorkHorse(List<Movie> movies) {
-        // TODO Impossibly Hard Query: insert code here
-        return new ArrayList<>();
+    private List<Tuple<String, Integer>> queryWorkHorse(final List<Movie> movies) {
+        final Map<String, Integer> actorMap = new HashMap<>();
+
+        movies.stream()
+              .forEach(movie -> movie.getCastList().forEach(actor -> {
+                  if (!actor.isEmpty()) {
+                      if (actorMap.containsKey(actor)) {
+                          actorMap.put(actor, actorMap.get(actor) + 1);
+                      } else {
+                          actorMap.put(actor, 1);
+                      }
+                  }
+              }));
+
+        return actorMap.entrySet()
+                       .stream()
+                       .sorted((o1, o2) -> {
+                           if (o1.getValue() > o2.getValue()) {
+                               return -1;
+                           } else if (o1.getValue() < o2.getValue()) {
+                               return 1;
+                           } else {
+                               return 0;
+                           }
+                       })
+                       .limit(10)
+                       .sorted((a1, a2) -> a1.getKey().compareToIgnoreCase(a2.getKey()))
+                       .map(entry -> new Tuple<>(entry.getKey(), entry.getValue()))
+                       .collect(Collectors.toList());
     }
 
     /**
@@ -271,9 +298,20 @@ public class IMDBQueries {
      *          the list of movies which is to be queried
      * @return best movies by year, starting from 1990 until 2010.
      */
-    public List<Movie> queryMustSee(List<Movie> movies) {
-        // TODO Impossibly Hard Query: insert code here
-        return new ArrayList<>();
+    private List<Movie> queryMustSee(final Collection<Movie> movies) {
+        final List<Movie> sortedMovies = new ArrayList<>(20);
+        for (int year = 1990; year <= 2010; year++) {
+            final int finalYear = year;
+            final Optional<Movie> optionalLowestMovie = movies.stream()
+                                                              .filter(movie -> Integer.valueOf(movie.getYear()) == finalYear
+                                                                  && Utils.parseNumber(movie.getRatingCount()) > 10000)
+                                                              .max((m1, m2) -> Double.compare(Double.valueOf(m1.getRatingValue()),
+                                                                  Double.valueOf(m2.getRatingValue())));
+            if (optionalLowestMovie.isPresent()) {
+                sortedMovies.add(optionalLowestMovie.get());
+            }
+        }
+        return sortedMovies;
     }
 
     /**
@@ -285,9 +323,20 @@ public class IMDBQueries {
      *          the list of movies which is to be queried
      * @return worst movies by year, starting from 1990 till (including) 2010.
      */
-    public List<Movie> queryRottenTomatoes(List<Movie> movies) {
-        // TODO Impossibly Hard Query: insert code here
-        return new ArrayList<>();
+    private static List<Movie> queryRottenTomatoes(final Collection<Movie> movies) {
+        final List<Movie> sortedMovies = new ArrayList<>(20);
+        for (int year = 1990; year <= 2010; year++) {
+            final int finalYear = year;
+            final Optional<Movie> optionalLowestMovie = movies.stream()
+                                                              .filter(movie -> Integer.valueOf(movie.getYear()) == finalYear
+                                                                  && Double.valueOf(movie.getRatingValue()) > 0.0)
+                                                              .min((m1, m2) -> Double.compare(Double.valueOf(m1.getRatingValue()),
+                                                                  Double.valueOf(m2.getRatingValue())));
+            if (optionalLowestMovie.isPresent()) {
+                sortedMovies.add(optionalLowestMovie.get());
+            }
+        }
+        return sortedMovies;
     }
 
     /**
@@ -467,7 +516,7 @@ public class IMDBQueries {
         {
             IMDBQueries queries = new IMDBQueries();
             long time = System.currentTimeMillis();
-            List<Movie> result = queries.queryRottenTomatoes(movies);
+            List<Movie> result = IMDBQueries.queryRottenTomatoes(movies);
             System.out.println("Time:" + (System.currentTimeMillis() - time));
 
             if (result != null && !result.isEmpty() && !result.isEmpty()) {
