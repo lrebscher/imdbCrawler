@@ -94,7 +94,7 @@ public class IMDBQueries {
      */
     private List<Tuple<Movie, Long>> queryUnderTheRadar(List<Movie> movies) {
         return movies.stream()
-                     .filter(movie -> Integer.valueOf(movie.getYear()) <= 2015)
+                     .filter(movie -> Integer.valueOf(movie.getYear()) <= 2015 && movie.getCountryList().contains("USA"))
                      .filter(movie -> Float.valueOf(movie.getRatingValue()) > 8.0 && Utils.parseNumber(movie.getRatingCount()) >= 1000)
                      .map(movie -> {
                          //format: $313,837,577
@@ -163,7 +163,7 @@ public class IMDBQueries {
         return movies.stream()
                      .filter(movie -> movie.getGenreList().contains("Sci-Fi"))
                      .filter(movie -> movie.getDescription().contains("Mars"))
-                     .sorted((m1, m2) -> Integer.valueOf(m1.getYear()) > Integer.valueOf(m2.getYear()) ? 1 : 0)
+                     .sorted((m1, m2) -> Long.compare(Utils.parseNumber(m1.getYear()), Utils.parseNumber(m2.getYear())))
                      .collect(Collectors.toList());
     }
 
@@ -180,6 +180,7 @@ public class IMDBQueries {
     private List<Movie> queryColossalFailure(final Collection<Movie> movies) {
         //duration format: 2h 10min, duration can be empty
         return movies.stream()
+                     .filter(movie -> movie.getCountryList().contains("USA"))
                      .filter(movie -> !movie.getDuration().isEmpty()
                          //beyond 2 hours, check first char (hour) if bigger or equal than 2, assume there is no movie with 2 digits hours
                          && Integer.valueOf(movie.getDuration().charAt(0)) >= 2
@@ -213,17 +214,18 @@ public class IMDBQueries {
      * @return the top 10 character names and their frequency of occurrence;
      *         sorted in decreasing order of frequency
      */
-    private List<Tuple<String, Integer>> queryUncreativeWriters(final List<Movie> movies) {
+    private List<Tuple<String, Integer>> queryUncreativeWriters(final Collection<Movie> movies) {
         //idea, hashMap with count
         final Map<String, Integer> charactersCount = new HashMap<>();
 
         movies.stream()
               .forEach(movie -> movie.getCharacterList()
                                      .forEach(character -> {
-                                         if (!character.toLowerCase().isEmpty()
-                                             && !character.toLowerCase().contains("herself")
-                                             && !character.toLowerCase().contains("himself")
-                                             && !character.toLowerCase().contains("doctor")) {
+                                         final String lowerCaseCharacter = character.toLowerCase();
+                                         if (!lowerCaseCharacter.isEmpty()
+                                             && !lowerCaseCharacter.contains("herself")
+                                             && !lowerCaseCharacter.contains("himself")
+                                             && !lowerCaseCharacter.contains("doctor")) {
 
                                              if (charactersCount.containsKey(character)) {
                                                  charactersCount.put(character, charactersCount.get(character) + 1);
@@ -258,7 +260,7 @@ public class IMDBQueries {
      * @return the top ten actors and the number of movies they had a role in,
      *         sorted by the latter.
      */
-    private List<Tuple<String, Integer>> queryWorkHorse(final List<Movie> movies) {
+    private List<Tuple<String, Integer>> queryWorkHorse(final Collection<Movie> movies) {
         final Map<String, Integer> actorMap = new HashMap<>();
 
         movies.stream()
