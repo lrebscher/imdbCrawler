@@ -4,111 +4,106 @@
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 import java.io.IOException;
-// import java.util.Map;
-// import java.util.HashMap;
-import java.util.List;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 import javax.json.Json;
 import javax.json.JsonArray;
-import javax.json.JsonObject;
 import javax.json.JsonArrayBuilder;
+import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.json.stream.JsonGenerationException;
 import javax.json.stream.JsonGenerator;
-// import javax.json.stream.JsonGeneratorFactory;
 
-public class MovieWriter
-{
-	private ArrayList<JsonObject> objects;
-	private String directory;
-	private String filename;
+public class MovieWriter {
 
-	public MovieWriter()
-	{
-		this(".".concat(File.separator).concat("data").concat(File.separator));
-	}
+    private final ArrayList<JsonObject> objects;
 
-	public MovieWriter(final String directory)
-	{
-		this.objects = new ArrayList<>(1);
-		this.directory = directory;
-		this.filename = "";
-	}
+    private final String directory;
 
-	public MovieWriter(final String directory, final String filename)
-	{
-		this.objects = new ArrayList<>(1);
-		this.directory = directory;
-		this.filename = filename;
-	}
+    private String filename;
 
-	public void setFilename(final String filename) { this.filename = filename; }
-	public void setDirectory(final String directory) { this.directory = directory; }
+    public MovieWriter(final String directory) {
+        this.directory = directory;
 
-	private JsonArray createJsonArray(final List<String> list)
-	{
-		JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
+        objects = new ArrayList<>(1);
+        filename = "";
+    }
 
-		for(final String s : list) arrBuilder.add(s);
-		return arrBuilder.build();
-	}
+    private static JsonArray createJsonArray(final Iterable<String> list) {
+        final JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
 
-	public void addMovie(Movie movie)
-	{
-		JsonObjectBuilder objBuilder = Json.createObjectBuilder();
+        for (final String s : list) {
+            arrBuilder.add(s);
+        }
+        return arrBuilder.build();
+    }
 
-		objBuilder.add("title", movie.getTitle());
-		objBuilder.add("year", movie.getYear());
-		objBuilder.add("genreList", createJsonArray(movie.getGenreList()));
-		objBuilder.add("countryList", createJsonArray(movie.getCountryList()));
-		objBuilder.add("description", movie.getDescription());
-		objBuilder.add("budget", movie.getBudget());
-		objBuilder.add("gross", movie.getGross());
-		objBuilder.add("ratingValue", movie.getRatingValue());
-		objBuilder.add("ratingCount", movie.getRatingCount());
-		objBuilder.add("duration", movie.getDuration());
-		objBuilder.add("castList", createJsonArray(movie.getCastList()));
-		objBuilder.add("characterList", createJsonArray(movie.getCharacterList()));
-		objBuilder.add("directorList", createJsonArray(movie.getDirectorList()));
-		if(objects.isEmpty()) this.filename = movie.getTitle().toLowerCase();
-		this.objects.add(objBuilder.build());
-	}
+    public void addMovie(final Movie movie) {
+        final JsonObjectBuilder objBuilder = Json.createObjectBuilder();
 
-	public void writeFile() { writeFile(this.filename); }
+        objBuilder.add("title", movie.getTitle());
+        objBuilder.add("year", movie.getYear());
+        objBuilder.add("genreList", createJsonArray(movie.getGenreList()));
+        objBuilder.add("countryList", createJsonArray(movie.getCountryList()));
+        objBuilder.add("description", movie.getDescription());
+        objBuilder.add("budget", movie.getBudget());
+        objBuilder.add("gross", movie.getGross());
+        objBuilder.add("ratingValue", movie.getRatingValue());
+        objBuilder.add("ratingCount", movie.getRatingCount());
+        objBuilder.add("duration", movie.getDuration());
+        objBuilder.add("castList", createJsonArray(movie.getCastList()));
+        objBuilder.add("characterList", createJsonArray(movie.getCharacterList()));
+        objBuilder.add("directorList", createJsonArray(movie.getDirectorList()));
+        objBuilder.add("url", movie.getUrl());
 
-	public void writeFile(final String filename)
-	{
-		// final Map<String, Object> properties = new HashMap<>(1);
-		final String outPath = this.directory.concat(this.filename.replaceAll("[^a-z0-9]", "")).concat(".json");
-		final File outDir = (new File(this.directory));
+        if (objects.isEmpty()) {
+            filename = movie.getTitle().toLowerCase();
+        }
+        objects.add(objBuilder.build());
+    }
 
-		try { if(!outDir.exists()) outDir.mkdir(); }
-		catch(final SecurityException s) { System.out.println("SecurityException: " + s.getMessage()); System.exit(-1); }
+    public void writeFile() {
+        writeFile(this.filename);
+    }
 
-		// properties.put(JsonGenerator.PRETTY_PRINTING, true);
-		// final JsonGeneratorFactory factory = Json.createGeneratorFactory(properties);
+    private void writeFile(final String filename) {
+        // final Map<String, Object> properties = new HashMap<>(1);
+        final String outPath = this.directory.concat(this.filename.replaceAll("[^a-z0-9]", "")).concat(".json");
+        final File outDir = new File(directory);
 
-		try(JsonGenerator generator = Json.createGenerator(new OutputStreamWriter(new FileOutputStream(new File(outPath)), "UTF-8")))
-		{
-			generator.writeStartArray();
+        try {
+            if (!outDir.exists()) {
+                outDir.mkdir();
+            }
+        } catch (final SecurityException s) {
+            System.out.println("SecurityException: " + s.getMessage());
+            System.exit(-1);
+        }
 
-			if(!this.objects.isEmpty())
-			{
-				for(JsonObject movie : this.objects)
-				{
-					// generator.writeStartObject();
-					generator.write(movie);
-					// generator.writeEnd();
-				}
-			}
+        // properties.put(JsonGenerator.PRETTY_PRINTING, true);
+        // final JsonGeneratorFactory factory = Json.createGeneratorFactory(properties);
 
-			generator.writeEnd();
-			generator.close();
-		}
-		catch(final JsonGenerationException jg) { System.out.println("JsonGenerationException: " + jg.getMessage()); System.exit(-1); }
-		catch(final IOException io) { System.out.println("IOException: " + io.getMessage()); System.exit(-1); }
-	}
+        try (JsonGenerator generator = Json.createGenerator(new OutputStreamWriter(new FileOutputStream(new File(outPath)), "UTF-8"))) {
+            generator.writeStartArray();
+
+            if (!objects.isEmpty()) {
+                for (final JsonObject movie : objects) {
+                    // generator.writeStartObject();
+                    generator.write(movie);
+                    // generator.writeEnd();
+                }
+            }
+
+            generator.writeEnd();
+            generator.close();
+        } catch (final JsonGenerationException jg) {
+            System.out.println("JsonGenerationException: " + jg.getMessage());
+            System.exit(-1);
+        } catch (final IOException io) {
+            System.out.println("IOException: " + io.getMessage());
+            System.exit(-1);
+        }
+    }
 }

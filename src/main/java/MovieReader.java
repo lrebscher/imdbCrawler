@@ -11,9 +11,9 @@ import javax.json.JsonReader;
 import javax.json.JsonString;
 import javax.json.JsonValue;
 
-public class MovieReader {
+public final class MovieReader {
 
-    public MovieReader() {
+    private MovieReader() {
     }
 
     /**
@@ -34,14 +34,20 @@ public class MovieReader {
      * @throws IOException
      */
     public static List<Movie> readMoviesFrom(final File moviesDir) throws IOException {
-        List<Movie> movies = new ArrayList<>();
+        final List<Movie> movies = new ArrayList<>();
 
-	    if(moviesDir == null) { System.out.println("NullPointerException: No such directory."); System.exit(-1); }
-		if(moviesDir.listFiles() == null) { System.out.println("NullPointerException: No such directory."); System.exit(-1); }
+        if (moviesDir == null) {
+            System.out.println("NullPointerException: No such directory.");
+            System.exit(-1);
+        }
+        if (moviesDir.listFiles() == null) {
+            System.out.println("NullPointerException: No such directory.");
+            System.exit(-1);
+        }
 
-        for (final File f : moviesDir.listFiles()) {
-            if (f.getName().endsWith(".json")) {
-                try (JsonReader reader = Json.createReader(new FileInputStream(f))) {
+        for (final File file : moviesDir.listFiles()) {
+            if (file.getName().endsWith(".json")) {
+                try (JsonReader reader = Json.createReader(new FileInputStream(file))) {
                     final JsonArray movie = reader.readArray();
                     if (movie.size() > 0) {
                         JsonObject m = (JsonObject) movie.get(0);
@@ -105,9 +111,9 @@ public class MovieReader {
             if (o != null) {
                 return (String) o;
             }
-        } catch(final NullPointerException np) {
-	        System.out.println("NullPointerException: " + np.getMessage());
-	        System.exit(-1);
+        } catch (final NullPointerException np) {
+            System.out.println("NullPointerException: " + np.getMessage());
+            System.exit(-1);
         } finally {
         }
         return "";

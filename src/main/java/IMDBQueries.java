@@ -162,6 +162,7 @@ public class IMDBQueries {
     private List<Movie> queryRedPlanet(final Collection<Movie> movies) {
         return movies.stream()
                      .filter(movie -> movie.getGenreList().contains("Sci-Fi"))
+                     //"mentioning Mars" will be interpreted as containing substring "Mars" in the description
                      .filter(movie -> movie.getDescription().contains("Mars"))
                      .sorted((m1, m2) -> Long.compare(Utils.parseNumber(m1.getYear()), Utils.parseNumber(m2.getYear())))
                      .collect(Collectors.toList());
@@ -187,7 +188,10 @@ public class IMDBQueries {
                          //budget over 1 mio.
                          && Utils.parseNumber(movie.getBudget()) > 1000000
                          //rating below 5.0
-                         && Float.valueOf(movie.getRatingValue()) < 5.0)
+                         && Float.valueOf(movie.getRatingValue()) < 5.0
+                         // if 0.0 -> is not yet rated and therefore not a colossal failure
+                         && Float.valueOf(movie.getRatingValue()) > 0.0)
+
                      //sort ascending by rating
                      .sorted((m1, m2) -> {
                          float rating1 = Float.valueOf(m1.getRatingValue());
@@ -352,8 +356,7 @@ public class IMDBQueries {
      * @return report the top 10 pairs of actors and the number of movies they
      *         feature together. Sort by number of movies.
      */
-    public List<Tuple<Tuple<String, String>, Integer>> queryMagicCouple(
-        List<Movie> movies) {
+    private List<Tuple<Tuple<String, String>, Integer>> queryMagicCouple(List<Movie> movies) {
         // TODO Impossibly Hard Query: insert code here
         return new ArrayList<>();
     }
@@ -369,7 +372,7 @@ public class IMDBQueries {
             System.exit(0);
         }
 
-        List<Movie> movies = MovieReader.readMoviesFrom(new File(moviesPath));
+        final List<Movie> movies = MovieReader.readMoviesFrom(new File(moviesPath));
 
         System.out.println("All-rounder");
         {
@@ -429,13 +432,13 @@ public class IMDBQueries {
 
         System.out.println("The red planet");
         {
-            IMDBQueries queries = new IMDBQueries();
+            final IMDBQueries queries = new IMDBQueries();
             long time = System.currentTimeMillis();
-            List<Movie> result = queries.queryRedPlanet(movies);
+            final List<Movie> result = queries.queryRedPlanet(movies);
             System.out.println("Time:" + (System.currentTimeMillis() - time));
 
             if (result != null && !result.isEmpty()) {
-                for (Movie movie : result) {
+                for (final Movie movie : result) {
                     System.out.println("\t" + movie.getTitle());
                 }
             } else {
