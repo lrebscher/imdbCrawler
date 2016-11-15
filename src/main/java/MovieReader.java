@@ -35,6 +35,10 @@ public class MovieReader {
      */
     public static List<Movie> readMoviesFrom(final File moviesDir) throws IOException {
         List<Movie> movies = new ArrayList<>();
+
+	    if(moviesDir == null) { System.out.println("NullPointerException: No such directory."); System.exit(-1); }
+		if(moviesDir.listFiles() == null) { System.out.println("NullPointerException: No such directory."); System.exit(-1); }
+
         for (final File f : moviesDir.listFiles()) {
             if (f.getName().endsWith(".json")) {
                 try (JsonReader reader = Json.createReader(new FileInputStream(f))) {
@@ -101,6 +105,9 @@ public class MovieReader {
             if (o != null) {
                 return (String) o;
             }
+        } catch(final NullPointerException np) {
+	        System.out.println("NullPointerException: " + np.getMessage());
+	        System.exit(-1);
         } finally {
         }
         return "";

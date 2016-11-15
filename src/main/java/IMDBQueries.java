@@ -357,7 +357,8 @@ public class IMDBQueries {
     }
 
     public static void main(String argv[]) throws IOException {
-        String moviesPath = "./data/movies/";
+        // String moviesPath = ".".concat(File.separator).concat("data").concat(File.separator).concat("movies").concat(File.separator);
+        String moviesPath = ".".concat(File.separator).concat("data").concat(File.separator);
 
         if (argv.length == 1) {
             moviesPath = argv[0];

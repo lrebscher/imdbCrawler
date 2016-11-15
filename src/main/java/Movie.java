@@ -1,291 +1,279 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-public class Movie {
+public class Movie
+{
+	private String title;
+	private String year;
+	private String url;
+	private List<String> genreList;
+	private List<String> countryList;
+	private String description;
+	private String budget;
+	private String gross;
+	private String ratingValue;
+	private String ratingCount;
+	private String duration;
+	private List<String> castList;
+	private List<String> characterList;
+	private List<String> directorList;
 
-    private String title;
+	public Movie()
+	{
+		this.title = "";
+		this.year = "";
+		this.url = "";
+		this.genreList = new ArrayList<>();
+		this.countryList = new ArrayList<>();
+		this.description = "";
+		this.budget = "";
+		this.gross = "";
+		this.ratingValue = "";
+		this.ratingCount = "";
+		this.duration = "";
+		this.castList = new ArrayList<>();
+		this.characterList = new ArrayList<>();
+		this.directorList = new ArrayList<>();
+	}
 
-    private String year;
+	/**
+	 * @return The title
+	 */
+	public String getTitle()
+	{
+		return this.title;
+	}
 
-    private String url;
+	/**
+	 * @param title The title
+	 */
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
 
-    private List<String> genreList = new ArrayList();
+	/**
+	 * @return The year
+	 */
+	public String getYear()
+	{
+		if(this.year == null || this.year.trim().equals("")) return "0";
+		return this.year;
+	}
 
-    private List<String> countryList = new ArrayList();
+	/**
+	 * @param year The year
+	 */
+	public void setYear(String year)
+	{
+		this.year = year;
+	}
 
-    private String description;
+	/**
+	 * @return The url
+	 */
+	public String getUrl()
+	{
+		return this.url;
+	}
 
-    private String budget;
+	/**
+	 * @param url The URL
+	 */
+	public void setUrl(String url)
+	{
+		this.url = url;
+	}
 
-    private String gross;
+	/**
+	 * @return The genreList
+	 */
+	public List<String> getGenreList()
+	{
+		return this.genreList;
+	}
 
-    private String ratingValue;
+	/**
+	 * @param genreList The genreList
+	 */
+	public void setGenreList(List<String> genreList)
+	{
+		this.genreList = genreList;
+	}
 
-    private String ratingCount;
+	/**
+	 * @return The countryList
+	 */
+	public List<String> getCountryList()
+	{
+		return this.countryList;
+	}
 
-    private String duration;
+	/**
+	 * @param countryList The countryList
+	 */
+	public void setCountryList(List<String> countryList)
+	{
+		this.countryList = countryList;
+	}
 
-    private List<String> castList = new ArrayList();
+	/**
+	 * @return The description
+	 */
+	public String getDescription()
+	{
+		return this.description;
+	}
 
-    private List<String> characterList = new ArrayList();
+	/**
+	 * @param description The description
+	 */
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 
-    private List<String> directorList = new ArrayList();
+	/**
+	 * @return The budget
+	 */
+	public String getBudget()
+	{
+		if(this.budget == null || this.budget.trim().equals(""))
+		{
+			return "0";
+		}
+		return this.budget;
+	}
 
-    /**
-     *
-     * @return The title
-     */
-    public String getTitle() {
-        return this.title;
-    }
+	/**
+	 * @param budget The budget
+	 */
+	public void setBudget(String budget)
+	{
+		this.budget = budget;
+	}
 
-    /**
-     *
-     * @param title
-     *          The title
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	/**
+	 * @return The gross
+	 */
+	public String getGross()
+	{
+		if(this.gross == null || this.gross.trim().equals(""))
+		{
+			return "0";
+		}
+		return this.gross;
+	}
 
-    /**
-     *
-     * @return The year
-     */
-    public String getYear() {
-        if (this.year == null || this.year.trim().equals("")) {
-            return "0";
-        }
-        return this.year;
-    }
+	/**
+	 * @param gross The gross
+	 */
+	public void setGross(String gross)
+	{
+		this.gross = gross;
+	}
 
-    /**
-     *
-     * @param year
-     *          The year
-     */
-    public void setYear(String year) {
-        this.year = year;
-    }
+	/**
+	 * @return The ratingValue
+	 */
+	public String getRatingValue()
+	{
+		if(this.ratingValue == null || this.ratingValue.trim().equals("")) return "0";
+		return this.ratingValue;
+	}
 
-    /**
-     *
-     * @return The url
-     */
-    public String getUrl() {
-        return this.url;
-    }
+	/**
+	 * @param ratingValue The ratingValue
+	 */
+	public void setRatingValue(String ratingValue)
+	{
+		this.ratingValue = ratingValue;
+	}
 
-    /**
-     *
-     * @param url
-     *          The URL
-     */
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	/**
+	 * @return The ratingCount
+	 */
+	public String getRatingCount()
+	{
+		if(this.ratingCount == null || this.ratingCount.trim().equals("")) return "0";
+		return this.ratingCount;
+	}
 
-    /**
-     *
-     * @return The genreList
-     */
-    public List<String> getGenreList() {
-        return this.genreList;
-    }
+	/**
+	 * @param ratingCount The ratingCount
+	 */
+	public void setRatingCount(String ratingCount)
+	{
+		this.ratingCount = ratingCount;
+	}
 
-    /**
-     *
-     * @param genreList
-     *          The genreList
-     */
-    public void setGenreList(List<String> genreList) {
-        this.genreList = genreList;
-    }
+	/**
+	 * @return The duration
+	 */
+	public String getDuration()
+	{
+		return this.duration;
+	}
 
-    /**
-     *
-     * @return The countryList
-     */
-    public List<String> getCountryList() {
-        return this.countryList;
-    }
+	/**
+	 * @param duration The duration
+	 */
+	public void setDuration(String duration)
+	{
+		this.duration = duration;
+	}
 
-    /**
-     *
-     * @param countryList
-     *          The countryList
-     */
-    public void setCountryList(List<String> countryList) {
-        this.countryList = countryList;
-    }
+	/**
+	 * @return The castList
+	 */
+	public List<String> getCastList()
+	{
+		return this.castList;
+	}
 
-    /**
-     *
-     * @return The description
-     */
-    public String getDescription() {
-        return this.description;
-    }
+	/**
+	 * @param castList The castList
+	 */
+	public void setCastList(List<String> castList)
+	{
+		this.castList = castList;
+	}
 
-    /**
-     *
-     * @param description
-     *          The description
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	/**
+	 * @return The characterList
+	 */
+	public List<String> getCharacterList()
+	{
+		return this.characterList;
+	}
 
-    /**
-     *
-     * @return The budget
-     */
-    public String getBudget() {
-        if (this.budget == null || this.budget.trim().equals("")) {
-            return "0";
-        }
-        return this.budget;
-    }
+	/**
+	 * @param characterList The characterList
+	 */
+	public void setCharacterList(List<String> characterList)
+	{
+		this.characterList = characterList;
+	}
 
-    /**
-     *
-     * @param budget
-     *          The budget
-     */
-    public void setBudget(String budget) {
-        this.budget = budget;
-    }
+	/**
+	 * @return The directorList
+	 */
+	public List<String> getDirectorList()
+	{
+		return this.directorList;
+	}
 
-    /**
-     *
-     * @return The gross
-     */
-    public String getGross() {
-        if (this.gross == null || this.gross.trim().equals("")) {
-            return "0";
-        }
-        return this.gross;
-    }
+	/**
+	 * @param directorList The directorList
+	 */
+	public void setDirectorList(List<String> directorList)
+	{
+		this.directorList = directorList;
+	}
 
-    /**
-     *
-     * @param gross
-     *          The gross
-     */
-    public void setGross(String gross) {
-        this.gross = gross;
-    }
-
-    /**
-     *
-     * @return The ratingValue
-     */
-    public String getRatingValue() {
-        if (this.ratingValue == null || this.ratingValue.trim().equals("")) {
-            return "0";
-        }
-        return this.ratingValue;
-    }
-
-    /**
-     *
-     * @param ratingValue
-     *          The ratingValue
-     */
-    public void setRatingValue(String ratingValue) {
-        this.ratingValue = ratingValue;
-    }
-
-    /**
-     *
-     * @return The ratingCount
-     */
-    public String getRatingCount() {
-        if (this.ratingCount == null || this.ratingCount.trim().equals("")) {
-            return "0";
-        }
-        return this.ratingCount;
-    }
-
-    /**
-     *
-     * @param ratingCount
-     *          The ratingCount
-     */
-    public void setRatingCount(String ratingCount) {
-        this.ratingCount = ratingCount;
-    }
-
-    /**
-     *
-     * @return The duration
-     */
-    public String getDuration() {
-        return this.duration;
-    }
-
-    /**
-     *
-     * @param duration
-     *          The duration
-     */
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
-    /**
-     *
-     * @return The castList
-     */
-    public List<String> getCastList() {
-        return this.castList;
-    }
-
-    /**
-     *
-     * @param castList
-     *          The castList
-     */
-    public void setCastList(List<String> castList) {
-        this.castList = castList;
-    }
-
-    /**
-     *
-     * @return The characterList
-     */
-    public List<String> getCharacterList() {
-        return this.characterList;
-    }
-
-    /**
-     *
-     * @param characterList
-     *          The characterList
-     */
-    public void setCharacterList(List<String> characterList) {
-        this.characterList = characterList;
-    }
-
-    /**
-     *
-     * @return The directorList
-     */
-    public List<String> getDirectorList() {
-        return this.directorList;
-    }
-
-    /**
-     *
-     * @param directorList
-     *          The directorList
-     */
-    public void setDirectorList(List<String> directorList) {
-        this.directorList = directorList;
-    }
-
-    @Override
-    public String toString() {
-        return this.title;
-    }
+	@Override
+	public String toString()
+	{
+		return this.title;
+	}
 }
