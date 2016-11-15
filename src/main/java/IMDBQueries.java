@@ -94,7 +94,7 @@ public class IMDBQueries {
      */
     private List<Tuple<Movie, Long>> queryUnderTheRadar(List<Movie> movies) {
         return movies.stream()
-                     .filter(movie -> Integer.valueOf(movie.getYear()) <= 2015)
+                     .filter(movie -> Integer.valueOf(movie.getYear()) <= 2015 && movie.getCountryList().contains("USA"))
                      .filter(movie -> Float.valueOf(movie.getRatingValue()) > 8.0 && Utils.parseNumber(movie.getRatingCount()) >= 1000)
                      .map(movie -> {
                          //format: $313,837,577
