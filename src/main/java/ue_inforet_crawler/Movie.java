@@ -1,3 +1,5 @@
+package ue_inforet_crawler;
+
 import java.util.List;
 import java.util.ArrayList;
 

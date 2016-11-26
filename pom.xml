@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>IMDBQueries</mainClass>
+                            <mainClass>ue_inforet_bool.BooleanQuery</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -34,6 +34,8 @@
     </build>
 
     <dependencies>
+
+        <!-- 1st assignment IMDB Crawler & Queries -->
 
         <!-- https://mvnrepository.com/artifact/org.glassfish/javax.json -->
         <dependency>
@@ -62,6 +64,9 @@
             <artifactId>jsoup</artifactId>
             <version>1.8.3</version>
         </dependency>
+
+
+        <!-- 2nd assignment Boolean IR in Java -->
 
     </dependencies>
 

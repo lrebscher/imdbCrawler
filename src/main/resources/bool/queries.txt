@@ -1,0 +1,1348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    
+    
+    
+    
+    
+    
+    
+    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><base href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet/queries.txt" /><meta content="text/plain" name="DC.format" /><meta content="Seite" name="DC.type" /><meta content="2016/11/21 - " name="DC.date.valid_range" /><meta content="WBIadmin" name="DC.creator" /><meta content="2016-11-21T18:17:13+01:00" name="DC.date.created" /><meta content="2016-11-21T18:17:26+01:00" name="DC.date.modified" /><meta content="de" name="DC.language" /><link rel="stylesheet" type="text/css" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/base-cachekey-d3cf35ef5eb1756ac611e9e857fb021a.css" /><style type="text/css" media="screen">@import url(https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcecollective.js.colorpicker-cachekey-096c4df2ae10087851e871333b527a7a.css);</style><link rel="stylesheet" type="text/css" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcehumboldt.portlet.imagelink-cachekey-cd7b9a29952c4ee17acbe654ffc62cd8.css" /><style type="text/css" media="screen">@import url(https://www.informatik.hu-berlin.de/portal_css/humboldt/resourceqi.portlet.TagClouds.stylesheetstagclouds-cachekey-62c0a91709467843cf3b2fcce474e14a.css);</style><link rel="stylesheet" type="text/css" media="screen" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcehumboldt.viewlet.sharelinkmenu-cachekey-7d2377b3cb37f7de8c2513abaa86a3bb.css" /><style type="text/css" media="all">@import url(https://www.informatik.hu-berlin.de/portal_css/humboldt/solgema_contextualcontentmenu-cachekey-75908b1ba0ae12164473a80cf0271368.css);</style><link rel="stylesheet" type="text/css" media="screen" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourceplone.formwidget.datetimestyles-cachekey-5deb94073a71334f6377e51bb3cb5b39.css" /><style type="text/css">@import url(https://www.informatik.hu-berlin.de/portal_css/humboldt/ploneboard-cachekey-ff82ceceb1248062cb34917b8c48b988.css);</style><style type="text/css" media="screen">@import url(https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcecalendar_stylescalendar-cachekey-aa3ff9e4df38a9e1061bd9a25199a02c.css);</style><link rel="stylesheet" type="text/css" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcehumboldt.theme.stylesbase-cachekey-d2e14394260f10ae3ad31dbb0c18852e.css" /><link rel="stylesheet" type="text/css" media="all" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourceplone.formwidget.recurrencejquery.recurrenceinput-cachekey-78353d6fb992b4fd125dd8f829e26ad7.css" /><link rel="stylesheet" type="text/css" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/themehumboldt.theme.diazocolors-cachekey-95e350ae138b2abfaff6f7d4f3777350.css" /><link rel="stylesheet" type="text/css" media="print" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcehumboldt.theme.stylesprint-cachekey-f428f329340beeb9743af4f27569f338.css" /><link rel="stylesheet" type="text/css" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourcehumboldt.outputfilters.csscaptionstyles-cachekey-d88f866b4e144e7ff714adfcd034a44d.css" /><link rel="stylesheet" type="text/css" media="screen" href="https://www.informatik.hu-berlin.de/portal_css/humboldt/resourceProducts.HULSF.stylesheetshulsf-cachekey-146dce880eb02d9045dfbc01c6600c0a.css" /><style type="text/css" media="screen">@import url(https://www.informatik.hu-berlin.de/portal_css/humboldt/resourceeasyslider-portlet-cachekey-b8ef3406e58d250498c8a84f6d3e8a52.css);</style><link rel="stylesheet" type="text/css" href="https://www.informatik.hu-berlin.de/compiled_styles.css" /><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourceplone.app.jquery-cachekey-2b1498d41b6265648d2db471f7d23fbf.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourceplone.formwidget.autocompletejquery.autocomplete.min-cachekey-71e21bde3be4f4aa82b28934f9220a44.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourcecollective.js.colorpicker.jseye-cachekey-9174965224e058c39ec2a2e496cabd2f.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/slimbox2-cachekey-7ef96a54fd3c89791a0a5cc18d5434a5.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/less.min-cachekey-427c431864f33afd9b9d61c366cdd7d5.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/ckeditor_vars-cachekey-7d2e4450591d86016a90b1756cca5dc0.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourceplone.formwidget.recurrencejquery.tmpl-beta1-cachekey-acf62d8e7a1ba96fa5b93cd476cc836f.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourcehumboldt.folderimage.folderimage-cachekey-89b7320ee5fd9ea3b4bbc2e3acb6642e.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourcehumboldt.frontpageslider.jsjquerybxsliderjquery.bxslider.min-cachekey-ea1ba4bfb7838eef9bfa5432328558db.js"></script><script type="text/javascript" src="https://www.informatik.hu-berlin.de/portal_javascripts/humboldt/resourceeasyslider-portlet-cachekey-513028a54914df9fe5b01cefcff708ed.js"></script><title>queries.txt — Wissensmanagement in der Bioinformatik</title><link rel="shortcut icon" type="image/x-icon" href="https://www.informatik.hu-berlin.de/++resource++humboldt.theme.images/favicon.ico" /><link rel="apple-touch-icon" href="https://www.informatik.hu-berlin.de/++resource++humboldt.theme.images/apple-touch-icon-114.png" /><link rel="author" href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/author/WBIadmin" title="Autoreninformation" /><link rel="canonical" href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet/queries.txt" /><script type="text/javascript">
+        jQuery(function($){
+            if (typeof($.datepicker) != "undefined"){
+              $.datepicker.setDefaults(
+                jQuery.extend($.datepicker.regional['de'],
+                {dateFormat: 'dd.mm.yy'}));
+            }
+        });
+        </script><link rel="search" href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/@@search" title="Website durchsuchen" /><meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes" /><meta name="generator" content="Plone - http://plone.org" /></head>
+  <body class="template-document_view portaltype-document site-wbi section-teaching subsection-archive subsection-archive-ws1617 subsection-archive-ws1617-ue_inforet userrole-anonymous" dir="ltr"><div id="visual-portal-wrapper" class="diazotheme no-frontpageslider"><a class="hiddenStructure" accesskey="2" href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet/queries.txt#content">Direkt zum Inhalt</a><a class="hiddenStructure" accesskey="4" href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet/queries.txt#search">Direkt zur Suche</a><a class="hiddenStructure" accesskey="6" href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet/queries.txt#portletNavigationTree">Direkt zur Navigation</a>
+      <div class="audience-menu smallscreen">
+	<!-- This is the drop down menu for the audience menu on the
+	     small screen version of the webpage -->
+	<a class="audience-toggle">
+	  ▼ Zielgruppen ▼
+	</a>
+	<div class="audience-menu-theme"><div id="audience-menu"> 
+  <ul class="audience-menu menu">
+
+  </ul>
+ </div></div>
+      </div>
+      <div class="skiptotop smallscreen">
+	<!-- This is a thick arrow up in unicode -->
+	<a href="#top-anchor">⇧</a>
+      </div>
+      <div name="top-anchor" class="top replace" id="top-anchor"><div id="portal-top">
+	      <div id="portal-logo" title="Home">
+   <a href="https://www.hu-berlin.de/">
+     <img alt="Logo der Humboldt-Universität zu Berlin" src="https://www.informatik.hu-berlin.de/++resource++humboldt.logo.Logo.jpg" />
+   </a>
+</div>
+
+<!-- mode: html -->
+<div class="smallscreen humboldt-logo">
+  <img src="https://www.informatik.hu-berlin.de/++resource++humboldt.logo/logo-mobile.png" />
+</div>
+
+	      <div id="folder_image">
+  
+  <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi">
+    <img alt="Startseite der Einrichtung" width="360px" height="110px" src="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/@@adapterdownload/humboldt.folderimage.interfaces.IFolderImage/folderimage/Informatik_mit WBI.jpg" />
+  </a>
+
+  <div id="folder_image_uhb">
+
+     
+
+     <div id="uhb_c">
+         
+         <span></span>
+         <p></p>
+         
+         <p></p>
+         
+     </div>
+  </div>
+
+</div>
+
+<!--
+<tal:foo replace="structure view/randomize_folderimage_script_block" />
+-->
+	    </div></div>
+      <div class="navigation"><div id="portal-column-one">
+	      
+		
+<div class="portletWrapper" data-portlethash="706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a68752d706f7274616c2d7469746c65" id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a68752d706f7274616c2d7469746c65"><dl class="portlet portlet-portal-title">
+
+  <dt class="portletHeader hiddenStructure">
+    <span class="portletTopLeft"></span>
+    <span class="portletTopRight"></span>
+  </dt>
+
+  <dd class="portletItem">
+    
+      <div>
+	
+         <div>
+	  
+	    <a href="https://www.mathnat.hu-berlin.de">Mathematisch-Naturwissenschaftliche Fakultät</a>
+	  
+         </div>
+	
+	
+         <div>
+	  
+	    <a href="https://www.informatik.hu-berlin.de">Institut für Informatik</a>
+	  
+         </div>
+	
+	
+         
+	  <div class="portal-title-current">
+	    <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi">Wissensmanagement in der Bioinformatik</a>
+	  </div>
+         
+	
+      </div>
+      <div class="hidden-title">
+	
+	  
+	    <a href="https://www.mathnat.hu-berlin.de">Mathematisch-Naturwissenschaftliche Fakultät</a>
+	  
+	
+	
+	  
+	    <a href="https://www.informatik.hu-berlin.de">Institut für Informatik</a>
+	  
+	
+	
+	  <div class="portal-title-current">
+	    <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi">Wissensmanagement in der Bioinformatik</a>
+	  </div>
+	
+      </div>
+    
+  </dd>
+
+  <dt class="portletFooter hiddenStructure">
+    <span class="portletBottomLeft"></span>
+    <span class="portletBottomRight"></span>
+  </dt>
+
+</dl>
+</div>
+
+<div class="portletWrapper" data-portlethash="706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a6e617669676174696f6e" id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a6e617669676174696f6e">
+<dl class="portlet portletNavigationTree">
+
+    <dt class="portletHeader hiddenStructure">
+        <span class="portletTopLeft"></span>
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/sitemap" class="tile">Navigation</a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem lastItem">
+        <ul class="navTree navTreeLevel0">
+            
+            
+
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-staff">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/staff" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>People</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeItemInPath navTreeFolderish section-teaching">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching" class="state-external navTreeItemInPath navTreeFolderish contenttype-folder" title="">
+            
+            <span>Lehre</span>
+        </a>
+
+        
+            <ul class="navTree navTreeLevel1">
+                
+
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-studiendiplomarbeiten">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/studienDiplomArbeiten" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Studien- und Diplomarbeiten</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeItemInPath navTreeFolderish section-archive">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive" class="state-external navTreeItemInPath navTreeFolderish contenttype-folder" title="">
+            
+            <span>Archiv</span>
+        </a>
+
+        
+            <ul class="navTree navTreeLevel2">
+                
+
+
+
+<li class="navTreeItem visualNoMarker navTreeItemInPath navTreeFolderish section-ws1617">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617" class="state-external navTreeItemInPath navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 16/17</span>
+        </a>
+
+        
+            <ul class="navTree navTreeLevel3">
+                
+
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-vl_dbs2">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/vl_dbs2" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Modul Implementierung von Datenbanken</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-vl_inforet">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/vl_inforet" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Modul Information Retrieval</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeItemInPath navTreeFolderish section-ue_inforet">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet" class="state-external navTreeItemInPath navTreeFolderish contenttype-folder" title="">
+            
+            <span>Übung zu Information Retrieval</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-se_modernhardware">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/se_modernhardware" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Seminar Datenbanken auf moderner Hardware</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-se_biomed">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/se_biomed" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Seminar Computational Analysis of Biomedical Data Sets</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sp_brettspiel">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/sp_brettspiel" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Semesterprojekt Implementierung eines Brettspiels</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+
+
+            </ul>
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss16">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss16" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 16</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws1516">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1516" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 15/16</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss15">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss15" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS15</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws1415">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1415" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 14/15</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss14">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss14" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS14</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws1314">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1314" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 13/14</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss13">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss13" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS13</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws1213">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1213" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 12/13</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss12">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss12" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS12</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws1112">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1112" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 11/12</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss11">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss11" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 11</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws1011">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1011" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 10/11</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ss10">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ss10" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 10</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0910">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0910" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 09/10</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose09">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose09" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 09</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0809">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0809" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 08/09</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose08">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose08" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 08</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0708">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0708" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 07/08</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose07">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose07" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 07</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0607">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0607" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 06/07</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose06">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose06" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 06</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0506">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0506" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 05/06</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose05">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose05" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 05</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0405">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0405" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 04/05</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose04">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose04" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 04</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0304">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0304" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 03/04</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-sose03">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose03" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>SS 03</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ws0203">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws0203" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>WS 02/03</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+
+
+            </ul>
+        
+
+    
+</li>
+
+
+
+
+            </ul>
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-research">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/research" class="state-external navTreeFolderish contenttype-folder" title="Research informations">
+            
+            <span>Research</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-ii">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/ii" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Informationsintegration</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-publications">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/Publications" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Publications</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-resources">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/resources" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Software and Downloads</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-contact">
+
+    
+
+
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/contact" class="state-external navTreeFolderish contenttype-folder" title="">
+            
+            <span>Contact</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+
+
+        </ul>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
+
+</div>
+
+
+
+
+	      
+	    </div></div>
+      <div class="search-bar smallscreen"><dl class="portlet portletSearch">
+
+  <dt class="portletHeader">
+      <span class="portletTopLeft"></span>
+      <span class="portletTopRight"></span>
+  </dt>
+
+    <dd class="portletItem">
+      <a class="hiddenStructure" name="search" id="search"></a>
+      <form id="searchform" action="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/@@search">
+        <div class="LSBox">
+          <input class="inputLabel searchField portlet-search-gadget" name="SearchableText" type="text" size="15" title="Website durchsuchen" placeholder="Website durchsuchen" />
+	  <input type="image" alt="Suche" width="16px" height="16px" src="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/++resource++humboldt.theme.images/search.png" />
+
+          <div class="LSResult" style="">
+            <div class="LSShadow"></div>
+          </div>
+        </div>
+      </form>
+      <div class="visualClear"><!-- --></div>
+    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl></div>
+      <div id="menu-bars">
+		
+  
+ <div id="audience-menu"> 
+  <ul class="audience-menu menu">
+
+  </ul>
+ </div>
+
+
+
+		<div id="header-menu">
+		  
+  
+  <ul class="menu" id="search-menu">
+    <li class="hiddenStructure">search-menu</li>
+    <li><a href="https://www.informatik.hu-berlin.de/de/impressum">Kontakt/Impressum</a></li>
+  </ul>
+
+
+
+		</div>
+	      </div>
+      <div class="content">
+	      
+		<div id="viewlet-above-content"><div id="portal-hiddenheader">
+
+  <h1 class="hiddenStructure">
+    
+      
+	Humboldt-Universität zu Berlin
+	-
+      
+    
+    
+      
+	Mathematisch-Naturwissenschaftliche Fakultät
+	-
+      
+    
+    
+      
+	Wissensmanagement in der Bioinformatik
+	
+      
+    
+  </h1>
+</div>
+
+</div>
+	      
+	      
+		<div class="">
+		  
+		    <div id="print-header">
+		<img src="https://www.informatik.hu-berlin.de/printlogo.png" alt="HU-Logo" />
+		<!-- <h1>
+			<span tal:replace="object_title" />
+		</h1> -->
+	</div>
+		  
+
+
+		  
+
+		  
+
+    <dl class="portalMessage info" id="kssPortalMessage" style="display:none">
+        <dt>Info</dt>
+        <dd></dd>
+    </dl>
+
+
+
+		  
+		    <div id="content" class="">
+		      
+
+		      
+
+			
+			  <div id="portal-breadcrumbs">
+
+  
+    <span class="breadcrumb">
+      <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
+      <span class="breadcrumbSeparator">|</span>
+    </span>
+  
+  
+    <span class="breadcrumb">
+      <a href="https://www.mathnat.hu-berlin.de">Mathematisch-Naturwissenschaftliche Fakultät</a>
+      <span class="breadcrumbSeparator">|</span>
+    </span>
+  
+  
+    <span class="breadcrumb">
+      <a href="https://www.informatik.hu-berlin.de">Institut für Informatik</a>
+      <span class="breadcrumbSeparator">|</span>
+    </span>
+  
+  
+    <span class="breadcrumb_home">
+      <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi">Wissensmanagement in der Bioinformatik</a>
+      <span class="breadcrumbSeparator">|</span>
+    </span>
+  
+
+  
+    <span class="breadcrumb">
+      <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching">Lehre</a>
+      <span class="breadcrumbSeparator">|</span>
+      
+    </span>
+  
+  
+    <span class="breadcrumb">
+      <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive">Archiv</a>
+      <span class="breadcrumbSeparator">|</span>
+      
+    </span>
+  
+  
+    <span class="breadcrumb">
+      <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617">WS 16/17</a>
+      <span class="breadcrumbSeparator">|</span>
+      
+    </span>
+  
+  
+    <span class="breadcrumb">
+      <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet">Übung zu Information Retrieval</a>
+      <span class="breadcrumbSeparator">|</span>
+      
+    </span>
+  
+  
+    <span class="breadcrumb_current">
+      
+      
+      queries.txt
+    </span>
+  
+</div>
+
+			
+
+			
+			  
+            
+                <h2 id="parent-fieldname-title" class="documentFirstHeading">
+                    queries.txt
+                </h2>
+            
+            
+        
+			
+
+			<a class="hiddenStructure" name="content" id="content"></a>
+
+			
+			  
+			
+
+			
+			  
+            
+                
+            
+            
+        
+			
+
+			
+			  
+
+
+			
+
+			<div id="content-core">
+			  
+    
+        
+        <div class="" id="parent-fieldname-text-4ceafac4b6d944a795b28da3462da8c1">
+            <p>title:"game of thrones" AND type:episode AND plot:shae AND plot:Baelish<br />plot:Skywalker AND type:series<br />plot:"year 2200"<br />plot:Berlin AND plot:wall AND type:television<br />plot:Cthulhu<br />title:"saber rider" AND plot:april<br />plot:"James Bond" AND plot:"Jaws" AND type:movie<br />title:"Pimp my Ride" AND episodetitle:mustang<br />plot:"matt berninger"<br />title:"grand theft auto" AND type:videogame<br />plot:"Jim Jefferies"<br />plot:Berlin AND type:videogame<br />plot:starcraft AND type:movie<br />type:video AND title:"from dusk till dawn"</p>
+            
+        </div>
+    
+    
+
+			</div>
+
+			
+			  
+
+			
+
+		      
+
+		    </div>
+		  
+
+		</div>
+	      
+
+	      
+		<div id="viewlet-below-content">
+
+
+
+
+</div>
+	      
+	    </div>
+      <div class="sidebar"><div id="portal-column-two">
+		
+		
+		  
+<div class="portletWrapper" data-portlethash="706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a6c616e67756167652d73656c6563746f72" id="portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a6c616e67756167652d73656c6563746f72"><!-- -*- mode: html -*- -->
+<dl class="portlet portletLanguageSelect">
+  <dt class="portletHeader">
+    <span class="portletTopLeft"></span>
+    <span class="portletToRight"></span>
+  </dt>
+  <dd class="portletItem">
+    <ul aria-label="Sprachauswahl">
+      <li>
+        <a aria-label:="Deutsch" href="https://www.informatik.hu-berlin.de/@@multilingual-selector/da171922ab4443ab990f6b5370aee4e0/de?set_language=de" class="selected" title="German">DE</a>
+      </li>
+      <li>
+        <a aria-label:="English" href="https://www.informatik.hu-berlin.de/@@multilingual-selector/da171922ab4443ab990f6b5370aee4e0/en?set_language=en" class="" title="English">EN</a>
+      </li>
+    </ul>
+  </dd>
+  <dd class="portletFooter">
+    <span class="portletBottomLeft"></span>
+    <span class="portletBottomRight"></span>
+  </dd>
+</dl>
+</div>
+
+<div class="portletWrapper" data-portlethash="706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a736561726368" id="portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a736561726368">
+<dl class="portlet portletSearch">
+
+  <dt class="portletHeader">
+      <span class="portletTopLeft"></span>
+      <span class="portletTopRight"></span>
+  </dt>
+
+    <dd class="portletItem">
+      <a class="hiddenStructure" name="search" id="search"></a>
+      <form id="searchform" action="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/@@search">
+        <div class="LSBox">
+          <input class="inputLabel searchField portlet-search-gadget" name="SearchableText" type="text" size="15" title="Website durchsuchen" placeholder="Website durchsuchen" />
+	  <input type="image" alt="Suche" width="16px" height="16px" src="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/++resource++humboldt.theme.images/search.png" />
+
+          <div class="LSResult" style="">
+            <div class="LSShadow"></div>
+          </div>
+        </div>
+      </form>
+      <div class="visualClear"><!-- --></div>
+    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
+
+</div>
+
+<div class="portletWrapper" data-portlethash="706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a7365617263682d736570617261746f72" id="portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a7365617263682d736570617261746f72"><dl class="portlet portlet-separator">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+      <hr />
+    </dd>
+
+    <dt class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dt>
+
+</dl>
+</div>
+
+<div class="portletWrapper" data-portlethash="706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a696d6167656c696e6b2d6c6f676f2d616c6c2d6c616e677561676573" id="portletwrapper-706c6f6e652e7269676874636f6c756d6e0a636f6e746578740a2f696e666f726d6174696b3231330a696d6167656c696e6b2d6c6f676f2d616c6c2d6c616e677561676573"><dl class="portlet portlet-imagelink">
+
+    
+    <dt class="portletHeader hiddenStructure">
+        <span class="portletTopLeft"></span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem" style="">
+      <a href="https://www.informatik.hu-berlin.de" class="without_hover_effect">
+	      <img src="https://www.informatik.hu-berlin.de/head-left-image.jpg" alt="Logo" />
+      </a>
+      
+    </dd>
+
+    <dt class="portletFooter hiddenStructure">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dt>
+
+</dl>
+</div>
+
+
+
+
+		
+	      </div></div>
+      <div class="footer"><div id="portal-footer">
+	    <hr />
+	    
+	      <div id="footer-left">
+		<div class="share_link_menu">
+  <h5 class="hiddenStructure">Die HU im WWW</h5>
+  <ul>
+    <li>
+      <a class="sprite1" href="http://www.facebook.com/humboldtuni" title="Die HU bei Facebook" style="background-image: url(https://www.informatik.hu-berlin.de/++resource++humboldt.viewlet.sharelinkmenu.icons/sprite.png)">
+        <span class="hiddenStructure">Die HU bei Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a class="sprite2" href="http://twitter.com/humboldtUni" title="Die HU bei Twitter" style="background-image: url(https://www.informatik.hu-berlin.de/++resource++humboldt.viewlet.sharelinkmenu.icons/sprite.png)">
+        <span class="hiddenStructure">Die HU bei Twitter</span>
+      </a>
+    </li>
+    <li>
+      <a class="sprite3" href="http://www.youtube.com/user/humboldtuniberlin?blend=1&amp;ob=5" title="Die HU bei YouTube" style="background-image: url(https://www.informatik.hu-berlin.de/++resource++humboldt.viewlet.sharelinkmenu.icons/sprite.png)">
+        <span class="hiddenStructure">Die HU bei YouTube</span>
+      </a>
+    </li>
+    <li>
+      <a class="sprite4" href="https://itunes.apple.com/de/itunes-u/wir-sind-humboldt/id419106729?mt=10" title="Die HU bei iTunes" style="background-image: url(https://www.informatik.hu-berlin.de/++resource++humboldt.viewlet.sharelinkmenu.icons/sprite.png)">
+        <span class="hiddenStructure">Die HU bei iTunes</span>
+      </a>
+    </li>
+    <li>
+      <a class="sprite5" href="https://www.hu-berlin.de/pr/aktuell/rss-info_html" title="Die RSS-Feeds der HU" style="background-image: url(https://www.informatik.hu-berlin.de/++resource++humboldt.viewlet.sharelinkmenu.icons/sprite.png)">
+        <span class="hiddenStructure">Die RSS-Feeds der HU</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+	      </div>
+	    
+
+	    
+	      <div id="footer-right">
+		
+
+
+
+<div class="documentActions">
+  
+  
+</div>
+
+	      </div>
+	    
+
+	    <div id="footer-center">
+	      <div class="layout-box">
+		<div class="documentByLine" id="plone-document-byline">
+  
+
+  
+    <span class="documentModified">
+      <span>zuletzt geändert:</span>
+      21.11.2016
+
+      <span class="lastEditedBy">
+	<a href="mailto:WBIadmin@staff.hu-berlin.de?subject=https%3A//www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/ws1617/ue_inforet/queries.txt">WB</a>
+	
+      </span>
+    </span>
+
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+</div>
+
+<div id="portal-personaltools-wrapper">
+
+<h5 class="hiddenStructure">Benutzerspezifische Werkzeuge</h5>
+
+
+
+<dl class="actionMenu deactivated" id="portal-personaltools">
+  <dt id="anon-personalbar">
+    
+        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/login" id="personaltools-login">Seite bearbeiten</a>
+    
+  </dt>
+</dl>
+
+</div>
+
+	      </div>
+	    </div>
+	    <div class="visualClear"><!-- --></div>
+	  </div></div>
+    </div></body>
+</html>

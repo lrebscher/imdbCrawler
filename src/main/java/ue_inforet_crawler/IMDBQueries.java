@@ -1,3 +1,5 @@
+package ue_inforet_crawler;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -70,7 +72,7 @@ public class IMDBQueries {
                              return 0;
                          }
                      })
-                     //map von Movie auf Tuple<Movie,String>, nimm dafür den ersten Director aus der Liste, da in der Query nur nach einem gefragt wird
+                     //map von imdb.Movie auf Tuple<imdb.Movie,String>, nimm dafür den ersten Director aus der Liste, da in der Query nur nach einem gefragt wird
                      .map(movie -> {
                          final String director = movie.getDirectorList().get(0);
                          return new Tuple<>(movie, director);
@@ -368,7 +370,7 @@ public class IMDBQueries {
         if (argv.length == 1) {
             moviesPath = argv[0];
         } else if (argv.length != 0) {
-            System.out.println("Call with: IMDBQueries.jar <moviesPath>");
+            System.out.println("Call with: imdb.IMDBQueries.jar <moviesPath>");
             System.exit(0);
         }
 

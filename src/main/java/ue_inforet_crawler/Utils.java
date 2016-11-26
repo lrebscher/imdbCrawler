@@ -1,3 +1,5 @@
+package ue_inforet_crawler;
+
 /**
  * Created by lrebscher on 13.11.16.
  */
