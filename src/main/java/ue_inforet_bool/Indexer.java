@@ -19,6 +19,8 @@ class Indexer {
 
     private Map<String, Collection<String>> yearIndex;
 
+    private Map<String, Collection<String>> typeIndex;
+
     /**
      * build inverted index
      *
@@ -55,15 +57,13 @@ class Indexer {
         yearIndex = new ConcurrentHashMap<>();
         documentList.stream()
                     .parallel()
-                    .filter(document -> {
-
-                        if (document.year == null) {
-                            System.err.println("Error year: " + document.titleId);
-                        }
-
-                        return document.year != null && !document.year.contains("????");
-                    })
+                    .filter(document -> document.year != null && !document.year.contains("????"))
                     .forEach(document -> processDocument(document.titleId, Collections.singleton(document.year), yearIndex));
+
+        typeIndex = new ConcurrentHashMap<>();
+        documentList.stream()
+                    .parallel()
+                    .forEach(document -> processDocument(document.titleId, Collections.singleton(document.type), typeIndex));
 
     }
 
@@ -100,6 +100,10 @@ class Indexer {
 
     public Map<String, Collection<String>> getYearIndex() {
         return Collections.unmodifiableMap(yearIndex);
+    }
+
+    public Map<String, Collection<String>> getTypeIndex() {
+        return typeIndex;
     }
 
     boolean doneBuilding() {
