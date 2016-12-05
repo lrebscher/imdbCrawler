@@ -93,8 +93,11 @@ public class BooleanQuery {
                         if (shortenedLine.contains("{")) {
                             //episode
                             actualDocument.type = "episode";
-                            actualDocument.episodeTitle = ParseUtils.tokenize(shortenedLine.substring(shortenedLine.lastIndexOf('{') + 1,
-                                shortenedLine.lastIndexOf('}')));
+                            final String episodeTitle = shortenedLine.substring(shortenedLine.lastIndexOf('{') + 1,
+                                shortenedLine.lastIndexOf('}'));
+                            actualDocument.episodeTitle = ParseUtils.tokenize(episodeTitle);
+
+                            shortenedLine = shortenedLine.replace('{' + episodeTitle + '}', "");
 
                         } else {
                             //series

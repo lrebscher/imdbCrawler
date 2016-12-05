@@ -21,6 +21,8 @@ class Indexer {
 
     private Map<String, Collection<String>> typeIndex;
 
+    private Map<String, Document> documentMap;
+
     /**
      * build inverted index
      *
@@ -38,33 +40,37 @@ class Indexer {
      * @param documentList documents to index
      */
     void buildIndexes(final Collection<Document> documentList) {
+        documentMap = new ConcurrentHashMap<>(documentList.size());
         titleIndex = new ConcurrentHashMap<>();
-        documentList.stream()
-                    .parallel()
-                    .forEach(document -> processDocument(document.titleId, document.title, titleIndex));
-
         plotIndex = new ConcurrentHashMap<>();
-        documentList.stream()
-                    .parallel()
-                    .forEach(document -> processDocument(document.titleId, document.plot, plotIndex));
-
         episodeIndex = new ConcurrentHashMap<>();
-        documentList.stream()
-                    .parallel()
-                    .filter(document -> document.episodeTitle != null)
-                    .forEach(document -> processDocument(document.titleId, document.episodeTitle, episodeIndex));
-
         yearIndex = new ConcurrentHashMap<>();
-        documentList.stream()
-                    .parallel()
-                    .filter(document -> document.year != null && !document.year.contains("????"))
-                    .forEach(document -> processDocument(document.titleId, Collections.singleton(document.year), yearIndex));
-
         typeIndex = new ConcurrentHashMap<>();
+
         documentList.stream()
                     .parallel()
-                    .forEach(document -> processDocument(document.titleId, Collections.singleton(document.type), typeIndex));
+                    .forEach(document -> {
+                        documentMap.put(document.titleId, document);
 
+                        //title index
+                        processDocument(document.titleId, document.title, titleIndex);
+
+                        //plot index
+                        processDocument(document.titleId, document.plot, plotIndex);
+
+                        //episode index
+                        if ("episode".equals(document.type)) {
+                            processDocument(document.titleId, document.episodeTitle, episodeIndex);
+                        }
+
+                        //year index
+                        if (document.year != null && !document.year.contains("????")) {
+                            processDocument(document.titleId, Collections.singleton(document.year), yearIndex);
+                        }
+
+                        //type index
+                        processDocument(document.titleId, Collections.singleton(document.type), typeIndex);
+                    });
     }
 
     /**
@@ -103,7 +109,11 @@ class Indexer {
     }
 
     public Map<String, Collection<String>> getTypeIndex() {
-        return typeIndex;
+        return Collections.unmodifiableMap(typeIndex);
+    }
+
+    public Map<String, Document> getDocumentMap() {
+        return Collections.unmodifiableMap(documentMap);
     }
 
     boolean doneBuilding() {

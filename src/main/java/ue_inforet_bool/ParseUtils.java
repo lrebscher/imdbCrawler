@@ -71,8 +71,6 @@ final class ParseUtils {
      */
     static Collection<String> tokenize(final String plot) {
         final String lowerCasePlot = plot.toLowerCase();
-
-        //TODO no "" double quotes allowed?
         final String[] tokens = DELIMITER_PATTERN.split(lowerCasePlot);
         final Collection<String> clearedTokens = new ArrayList<>(tokens.length);
         for (final String token : tokens) {
