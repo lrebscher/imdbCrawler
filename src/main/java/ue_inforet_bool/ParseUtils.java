@@ -1,5 +1,7 @@
 package ue_inforet_bool;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -67,11 +69,18 @@ final class ParseUtils {
      *
      * @return List of tokens
      */
-    static String[] tokenize(final String plot) {
+    static Collection<String> tokenize(final String plot) {
         final String lowerCasePlot = plot.toLowerCase();
 
         //TODO no "" double quotes allowed?
+        final String[] tokens = DELIMITER_PATTERN.split(lowerCasePlot);
+        final Collection<String> clearedTokens = new ArrayList<>(tokens.length);
+        for (final String token : tokens) {
+            if (!token.isEmpty()) {
+                clearedTokens.add(token);
+            }
+        }
 
-        return DELIMITER_PATTERN.split(lowerCasePlot);
+        return clearedTokens;
     }
 }

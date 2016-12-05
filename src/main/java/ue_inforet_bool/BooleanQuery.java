@@ -11,7 +11,6 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -103,6 +102,7 @@ public class BooleanQuery {
                         }
 
                         final String year = ParseUtils.getYear(shortenedLine);
+                        actualDocument.year = year;
                         shortenedLine = ParseUtils.removeYear(shortenedLine, year);
 
                         final String title = shortenedLine.substring(shortenedLine.indexOf('\"') + 1, shortenedLine.lastIndexOf('\"'));
@@ -156,7 +156,7 @@ public class BooleanQuery {
             System.out.println("Duration for parsing: " + parseDuration / 1000 + " s");
 
             //build index
-            indexer.buildTitleIndex(documents);
+            indexer.buildIndexes(documents);
 
         } catch (final IOException e) {
             e.printStackTrace();
@@ -206,9 +206,35 @@ public class BooleanQuery {
      *         lines (starting with "MV: ") of the documents matching the query
      */
     public Set<String> booleanQuery(final String queryString) {
+        final String[] searchParts = queryString.split("AND");
 
-        if (indexer.isTitleIndexBuild()) {
-            final Map<String, Collection<String>> titleIndex = indexer.getTitleIndex();
+        for (final String part : searchParts) {
+            final String lowerCasePart = part.toLowerCase().trim();
+            if (lowerCasePart.startsWith("title:")) {
+                //title index
+
+            } else if (lowerCasePart.startsWith("plot:")) {
+                //plot index
+                final String term = lowerCasePart.replace("plot:", "");
+                if (indexer.getPlotIndex().containsKey(term)) {
+                    final Collection<String> documents = indexer.getPlotIndex().get(term);
+
+                }
+
+            } else if (lowerCasePart.startsWith("type:")) {
+                //type index
+
+            } else if (lowerCasePart.startsWith("episodeTitle:")) {
+                //episodeTitleIndex
+
+            } else if (lowerCasePart.startsWith("year:")) {
+                //yearIndex
+
+            }
+        }
+
+        if (indexer.doneBuilding()) {
+            indexer.getPlotIndex();
         }
 
         //1. split by AND

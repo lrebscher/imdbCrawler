@@ -1,5 +1,7 @@
 package ue_inforet_bool;
 
+import java.util.Collection;
+
 import org.junit.Test;
 
 /**
@@ -9,7 +11,7 @@ public class BooleanQueryTest {
 
     @Test
     public void tokenize() throws Exception {
-        String[] tokens = ParseUtils.tokenize("This is a small test?");
+        Collection<String> tokens = ParseUtils.tokenize("This is a small test?");
 
     }
 

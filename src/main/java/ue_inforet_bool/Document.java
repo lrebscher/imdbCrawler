@@ -1,24 +1,22 @@
 package ue_inforet_bool;
 
+import java.util.Collection;
+
 /**
  * Created by lrebscher on 02.12.16.
  */
-public class Document {
+class Document {
 
-    public String titleId;
+    String titleId;
 
-    public String[] title;
+    Collection<String> title;
 
-    public String[] plot;
+    Collection<String> plot;
 
-    public String type;
+    String type;
 
-    public String year;
+    String year;
 
-    public String[] episodeTitle;
+    Collection<String> episodeTitle;
 
-    public String[] tokenizedPlot;
-
-    public Document() {
-    }
 }
