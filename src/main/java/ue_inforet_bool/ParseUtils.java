@@ -1,7 +1,7 @@
 package ue_inforet_bool;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,6 +46,8 @@ final class ParseUtils {
             //videogame
             shortendedLine = VIDEO_GAME_PATTERN.matcher(shortendedLine).replaceAll(Matcher.quoteReplacement(""));
             actualDocument.type = "videogame";
+        } else {
+            actualDocument.type = "movie";
         }
         return shortendedLine;
     }
@@ -69,11 +71,12 @@ final class ParseUtils {
      *
      * @return List of tokens
      */
-    static Collection<String> tokenize(final String plot) {
-        final String lowerCasePlot = plot.toLowerCase();
+    static List<String> tokenize(final String string) {
+        final String lowerCasePlot = string.toLowerCase();
         final String[] tokens = DELIMITER_PATTERN.split(lowerCasePlot);
-        final Collection<String> clearedTokens = new ArrayList<>(tokens.length);
+        final List<String> clearedTokens = new ArrayList<>(tokens.length);
         for (final String token : tokens) {
+
             if (!token.isEmpty()) {
                 clearedTokens.add(token);
             }

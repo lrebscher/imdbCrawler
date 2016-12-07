@@ -48,7 +48,6 @@ class Indexer {
         typeIndex = new ConcurrentHashMap<>();
 
         documentList.stream()
-                    .parallel()
                     .forEach(document -> {
                         documentMap.put(document.titleId, document);
 
