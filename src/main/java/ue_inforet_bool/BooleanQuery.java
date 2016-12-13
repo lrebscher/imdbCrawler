@@ -116,7 +116,7 @@ public class BooleanQuery {
 
                         actualDocument.title = ParseUtils.tokenize(title);
                     } else {
-                        shortenedLine = ParseUtils.handleTypeSubString(actualDocument, shortenedLine);
+                        //shortenedLine = ParseUtils.handleTypeSubString(actualDocument, shortenedLine);
 
                         //year
                         final String year = ParseUtils.getYear(shortenedLine);

@@ -20,3 +20,6 @@
    * IMDB plain text data files: http://www.imdb.com/interfaces
  
  
+# Aufgabe 3 Boolean IR with Lucene
+ 
+   * Lucene: https://lucene.apache.org/ 

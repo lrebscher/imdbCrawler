@@ -5,12 +5,15 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.lucene.document.Field.Store;
+import org.apache.lucene.document.TextField;
+
 /**
  * Created by lrebscher on 04.12.16.
  */
-final class ParseUtils {
+public final class ParseUtils {
 
-    static final String SUSPENDED = "{{suspended}}";
+    public static final String SUSPENDED = "{{suspended}}";
 
     private static final Pattern DELIMITER_PATTERN = Pattern.compile("\\.|,| |\\?|:|!");
 
@@ -31,32 +34,36 @@ final class ParseUtils {
      * @param shortendedLine given line
      * @return line with removed type
      */
-    static String handleTypeSubString(final Document actualDocument, String shortendedLine) {
+    public static String handleTypeSubString(final org.apache.lucene.document.Document actualDocument, String shortendedLine) {
+        final String type;
         if (shortendedLine.contains(DocumentType.TELEVISION)) {
             //television
             shortendedLine = TELEVISION_PATTERN.matcher(shortendedLine).replaceAll(Matcher.quoteReplacement(""));
-            actualDocument.type = "television";
+            type = "television";
 
         } else if (shortendedLine.contains(DocumentType.VIDEO)) {
             //video
             shortendedLine = VIDEO_PATTERN.matcher(shortendedLine).replaceAll(Matcher.quoteReplacement(""));
-            actualDocument.type = "video";
+            type = "video";
 
         } else if (shortendedLine.contains(DocumentType.VIDEO_GAME)) {
             //videogame
             shortendedLine = VIDEO_GAME_PATTERN.matcher(shortendedLine).replaceAll(Matcher.quoteReplacement(""));
-            actualDocument.type = "videogame";
+            type = "videogame";
         } else {
-            actualDocument.type = "movie";
+            type = "movie";
         }
+
+        actualDocument.add(new TextField("type", type, Store.YES));
+
         return shortendedLine;
     }
 
-    static String getYear(final String shortendedLine) {
+    public static String getYear(final String shortendedLine) {
         return shortendedLine.substring(shortendedLine.lastIndexOf('(') + 1, shortendedLine.lastIndexOf(')'));
     }
 
-    static String removeYear(final String shortenedLine, final String year) {
+    public static String removeYear(final String shortenedLine, final String year) {
         return shortenedLine.replace('(' + year + ')', "");
     }
 
@@ -71,7 +78,7 @@ final class ParseUtils {
      *
      * @return List of tokens
      */
-    static List<String> tokenize(final String string) {
+    public static List<String> tokenize(final String string) {
         final String lowerCasePlot = string.toLowerCase();
         final String[] tokens = DELIMITER_PATTERN.split(lowerCasePlot);
         final List<String> clearedTokens = new ArrayList<>(tokens.length);

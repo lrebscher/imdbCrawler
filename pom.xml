@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ue_inforet_bool.BooleanQuery</mainClass>
+                            <mainClass>ue_inforet_bool_study.BooleanQueryLucene</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -66,7 +66,23 @@
         </dependency>
 
 
-        <!-- 2nd assignment Boolean IR in Java -->
+        <!-- dependencies for 3rd assignment Boolean IR with Lucene-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>6.3.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queryparser -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>6.3.0</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
