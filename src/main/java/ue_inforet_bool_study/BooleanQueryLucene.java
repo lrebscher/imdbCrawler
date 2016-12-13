@@ -150,6 +150,8 @@ public class BooleanQueryLucene {
 
             //close reader
             reader.close();
+
+            indexWriter.commit();
             indexWriter.close();
 
             final long parseDuration = System.currentTimeMillis() - parseStart;
