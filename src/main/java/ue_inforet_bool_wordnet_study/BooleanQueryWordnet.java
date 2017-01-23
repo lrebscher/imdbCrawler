@@ -97,6 +97,10 @@ public class BooleanQueryWordnet {
      * @param wordnetDir the directory of the wordnet files
      */
     public void buildSynsets(String wordnetDir) {
+        if (!wordnetDir.endsWith("/")) {
+            wordnetDir += "/";
+        }
+
         final String[] FILENAMES = { "data.adj", "data.adv", "data.noun", "data.verb", "adj.exc", "adv.exc", "noun.exc", "verb.exc" };
 
         synSets = new HashMap<>(61000);
@@ -111,8 +115,6 @@ public class BooleanQueryWordnet {
         synSetsColl[2] = (HashMap) synSetsNoun;
         synSetsColl[3] = (HashMap) synSetsVerb;
         excSetsColl = new HashMap[4];
-        //{ synSetsAdj, synSetsAdv, synSetsNoun, synSetsVerb };
-
 
         BufferedReader reader;
         String[] tokenLine;
@@ -221,6 +223,7 @@ public class BooleanQueryWordnet {
         excSetsColl[0] = (HashMap) excSetsAdj;
         excSetsColl[1] = (HashMap) excSetsAdv;
         excSetsColl[2] = (HashMap) excSetsNoun;
+        excSetsColl[3] = (HashMap) excSetsVerb;
 
         for (i = 4; i < FILENAMES.length; i++) {
 
