@@ -444,14 +444,15 @@ public class BooleanQueryWordnet {
      * lines (starting with "MV: ") of the documents matching the query
      */
 
-    public Set<String> booleanQuery(String queryString) {
+    public Set<String> booleanQuery(final String queryString) {
         final Set<String> set = new HashSet<>();
 
-        queryString = QueryExtender.modifiyQuery(synSets, queryString);
+        final String modifiedQuery = QueryExtender.modifiyQuery(synSets, queryString);
+        System.out.println("\n" + "modified query: " + modifiedQuery + "\n" + "original query: " + queryString);
 
         try {
-            final QueryParser queryParser = new QueryParser(queryString, new StandardAnalyzer());
-            final Query query = queryParser.parse(queryString);
+            final QueryParser queryParser = new QueryParser(modifiedQuery, new StandardAnalyzer());
+            final Query query = queryParser.parse(modifiedQuery);
 
             final IndexReader indexReader = DirectoryReader.open(index);
             final IndexSearcher indexSearcher = new IndexSearcher(indexReader);

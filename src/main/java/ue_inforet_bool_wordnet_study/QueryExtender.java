@@ -20,8 +20,6 @@ public final class QueryExtender {
 
         String modifiedQuery = queryString;
 
-        System.out.println("\n" + "modified query: " + queryString + "\n" + "original query: " + queryString);
-
         for (final String part : searchParts) {
             final String lowerCasePart = part.trim()
                                              .replace("(", "")
