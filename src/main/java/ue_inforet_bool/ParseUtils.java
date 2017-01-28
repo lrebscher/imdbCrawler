@@ -84,7 +84,7 @@ public final class ParseUtils {
         final List<String> clearedTokens = new ArrayList<>(tokens.length);
         for (final String token : tokens) {
 
-            if (!token.isEmpty()) {
+            if (!token.isEmpty() || !token.equals(" ")) {
                 clearedTokens.add(token);
             }
         }

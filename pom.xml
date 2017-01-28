@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ue_inforet_bool_study.BooleanQueryLucene</mainClass>
+                            <mainClass>CoOccurrences</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
